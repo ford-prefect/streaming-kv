@@ -38,7 +38,7 @@
 
 ## Testing
 
-### Manul
+### Manual
 
 Run `test-server` and then connect `nc` as a client:
 
