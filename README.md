@@ -32,4 +32,6 @@
 
 ## Improvements
 
+- Make core code in to a dynamic library
+- Make cerr output optional (don't want libraries spewing logs)
 - Move to C++11/C++14 conventions where missing

@@ -6,14 +6,16 @@ OBJECTS = skv-server.o  \
 	  test-server.o \
 	  test-client.o
 
+LIBS = -lpthread
+
 %.o: %.cc
-	$(CXX) -c $^ -o $@
+	$(CXX) -g -c $^ -o $@
 
 test-server: test-server.o skv-server.o
-	$(CXX) $^ -o $@
+	$(CXX) $^ -o $@ $(LIBS)
 
 test-client: test-client.o skv-client.o
-	$(CXX) $^ -o $@
+	$(CXX) $^ -o $@ $(LIBS)
 
 all: $(PROGRAMS)
 

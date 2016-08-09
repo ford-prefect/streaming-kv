@@ -1,12 +1,13 @@
 #ifndef SKV_CLIENT_H
 #define SKV_CLIENT_H
 
+#include "common.h"
+
 #include <functional>
 #include <memory>
 #include <string>
 #include <vector>
 
-using byte = unsigned char;
 using UpdateCallback = std::function<void(const std::string)>;
 
 class SkvClient {
