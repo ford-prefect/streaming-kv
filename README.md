@@ -20,3 +20,7 @@
 
 - Server -> Client
   - Update: Provides key and new value, applies to new and updated values
+
+## Improvements
+
+- Move to C++11/C++14 conventions where missing
