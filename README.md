@@ -21,6 +21,15 @@
 - Server -> Client
   - Update: Provides key and new value, applies to new and updated values
 
+## Threads
+
+- Server
+  - 1 thread to accept connections
+  - TBD: use a thread pool and spawn workers for sending updates
+
+- Client
+  - 1 thread to listen for updates
+
 ## Improvements
 
 - Move to C++11/C++14 conventions where missing
