@@ -8,6 +8,8 @@ OBJECTS = skv-server.o  \
 
 LIBS = -lpthread
 
+all: $(PROGRAMS)
+
 %.o: %.cc
 	$(CXX) -g -c $^ -o $@
 
@@ -16,8 +18,6 @@ test-server: test-server.o skv-server.o
 
 test-client: test-client.o skv-client.o
 	$(CXX) $^ -o $@ $(LIBS)
-
-all: $(PROGRAMS)
 
 .PHONY: clean
 clean:
