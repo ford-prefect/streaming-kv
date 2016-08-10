@@ -143,8 +143,6 @@ bool SkvServer::notify(int clientfd, const std::string key, const std::shared_pt
 {
   /* FIXME: this should refactored to be dispatched from a different thread,
    * so we don't make blocking I/O during API calls. */
-
-  /* Can we make this lock more granular? */
   MessageHeader hdr;
 
   hdr.version = 1;
@@ -174,6 +172,7 @@ error:
 
 void SkvServer::notify_all(const std::string key, const std::shared_ptr<ByteVector> value)
 {
+  /* Can we make this lock more granular? */
   clients_lock.lock();
 
   for (auto client = clients.begin(); client != clients.end(); client++) {
