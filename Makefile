@@ -6,12 +6,13 @@ OBJECTS = skv-server.o  \
 	  test-server.o \
 	  test-client.o
 
+CFLAGS = -std=c++14 -g
 LIBS = -lpthread
 
 all: $(PROGRAMS)
 
 %.o: %.cc
-	$(CXX) -g -c $^ -o $@
+	$(CXX) $(CFLAGS) -c $^ -o $@
 
 test-server: test-server.o skv-server.o
 	$(CXX) $^ -o $@ $(LIBS)
