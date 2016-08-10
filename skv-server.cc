@@ -9,6 +9,11 @@
 #include <netinet/in.h>
 #include <netinet/ip.h>
 
+/* On systems where MSG_NOSIGNAL, resolve it to nothing */
+#ifndef MSG_NOSIGNAL
+#define MSG_NOSIGNAL 0
+#endif
+
 using namespace std;
 
 SkvServer::SkvServer() :
