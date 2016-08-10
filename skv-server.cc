@@ -84,7 +84,7 @@ bool SkvServer::start(const string addr, int port)
     goto error;
   }
 
-  if (bind(fd, (const sockaddr *) &saddr, sizeof(saddr)) < 0) {
+  if (::bind(fd, (const sockaddr *) &saddr, sizeof(saddr)) < 0) {
     cerr << "Unable to bind socket" << endl;
     goto error;
   }
